@@ -1,8 +1,8 @@
 import 'dart:math';
 
 class Points {
-  double? x;
-  double? y;
+  double x = 0.0;
+  double y = 0.0;
 
   // Constructor class
   Points(double x, y) {
@@ -26,11 +26,11 @@ class Points {
     print("$x , $y");
   }
 
-  double? getx() {
+  double getx() {
     return x;
   }
 
-  double? gety() {
+  double gety() {
     return y;
   }
 
@@ -43,20 +43,20 @@ class Points {
   }
 }
 
-double? distance(Points p1, Points p2) {
+double distance(Points p1, Points p2) {
   double dist;
   dist = sqrt(
-      (p2.x! - p1.x!) * (p2.x! - p1.x!) + ((p2.y! - p1.y!) * (p2.y! - p1.y!)));
+      (p2.x - p1.x) * (p2.x - p1.x) + ((p2.y - p1.y) * (p2.y - p1.y)));
   return dist;
 }
 
 void doubler(Points p1) {
   var currentx = p1.getx();
-  currentx = currentx! * 2;
+  currentx = currentx * 2;
   p1.setx(currentx);
 
   var currenty = p1.gety();
-  currenty = currenty! * 2;
+  currenty = currenty * 2;
   p1.sety(currenty);
 }
 
@@ -74,4 +74,9 @@ void main() {
   bool var4;
   var foo = [];
   var foo1 = [];
+  if (foo1 is int) {
+    print("True !!!");
+  } else {
+    print("False"); 
+  }
 }
